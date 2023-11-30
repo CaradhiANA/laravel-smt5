@@ -1,13 +1,14 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\KaryawanController;
+
+Route::get('/', fn() => view('welcome'));
 
 //route resource
 Route::resource('/posts', \App\Http\Controllers\PostController::class);
 
-use App\Http\Controllers\KaryawanController;
-
-Route::get('/karyawan', [KaryawanController::class, 'karyawan'])->middleware('checkRole:owner,admin');
+Route::get('/karyawan', [KaryawanController::class, 'karyawan']);
 
 //tambah
 Route::post('/karyawan/store', [KaryawanController::class, 'store'])->middleware('checkRole:owner');

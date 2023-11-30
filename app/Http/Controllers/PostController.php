@@ -73,7 +73,7 @@ class PostController extends Controller
         ]);
 
         //redirect to produk
-        return redirect()->route('posts.produk')->with(['success' => 'Data Berhasil Disimpan!']);
+        return redirect('posts')->with(['success' => 'Data Berhasil Disimpan!']);
     }
     /**
      * show
@@ -159,7 +159,7 @@ class PostController extends Controller
         }
 
         //redirect to produk
-        return redirect()->route('posts.produk')->with(['success' => 'Data Berhasil Diubah!']);
+        return redirect('posts')->with(['success' => 'Data Berhasil Diubah!']);
     }
     /**
      * destroy
@@ -179,6 +179,6 @@ class PostController extends Controller
         $post->delete();
 
         //redirect to produk
-        return redirect()->route('posts.produk')->with(['success' => 'Data Berhasil Dihapus!']);
+        return redirect('posts')->with(['success' => 'Data Berhasil Dihapus!']);
     }
 }

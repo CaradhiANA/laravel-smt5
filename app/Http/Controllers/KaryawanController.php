@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Karyawan;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -10,12 +11,10 @@ class KaryawanController extends Controller
     //method mengambil data pada db
     public function karyawan()
     {
-    	// mengambil data dari table 
-    	$karyawan = DB::table('karyawan')->get();
- 
+		// mengambil data dari table 
+    	$karyawan = Karyawan::get();
     	// mengirim data ke view 
-    	return view('karyawan',['karyawan' => $karyawan]);
- 
+    	return view('posts.karyawan',['karyawans' => $karyawan]);
     }
 
 	// method untuk insert data ke table pegawai
